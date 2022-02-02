@@ -1,21 +1,26 @@
 import React from 'react';
+import classes from "./Navbar.module.css"
+
+// let classes ={
+//   "item": ""
+// }
 
 const Navbar = () => {
-    return <nav className='nav'>
+    return <nav className='{classes.nav}'>
     <ul>
-      <li>
+      <li className="{classes.item}">
         <a href='#'>Profile</a>
       </li>
-      <li>
+      <li className="item">
         <a>Messages</a>
       </li>
-      <li>
+      <li className="item">
         <a>News</a>
       </li>
-      <li>
+      <li className="item">
         <a>Music</a>
       </li>
-      <li>
+      <li className="item">
         <a>Settings</a>
       </li>
     </ul>
