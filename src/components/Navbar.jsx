@@ -1,19 +1,19 @@
 import React from 'react';
-import classes from "./Navbar.module.css"
+import classes from "./Navbar.scss"
 
-// let classes ={
-//   "item": ""
-// }
+
 
 const Navbar = () => {
-    return <nav className='{classes.nav}'>
+    return <nav className='nav'>
     <ul>
-      <li className="{classes.item}">
-        <a href='#'>Profile</a>
+      <li className="item">
+        <a href='/Profile/Profile.jsx'>Profile</a>
       </li>
       <li className="item">
-        <a>Messages</a>
+        <a href='/Dialogs/Dialogs.jsx'>Messages</a>
       </li>
+
+      
       <li className="item">
         <a>News</a>
       </li>
