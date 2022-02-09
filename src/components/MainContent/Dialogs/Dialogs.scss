@@ -1,3 +1,5 @@
+ 
+ 
  .dialogs {
    display: grid;  
     grid-template-columns: 2fr 10fr;
@@ -5,6 +7,7 @@
    grid-area: c;
    background-color: blanchedalmond;
    color: red;
+   font-size: 25px;
     .dialogs_items {
         padding: 10px;
     }

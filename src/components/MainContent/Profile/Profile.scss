@@ -1,13 +1,30 @@
 .content {
   grid-area: c;
   background-color: blanchedalmond;
+  padding: 10px;
+  img {
+    width: 80%;
+
+  }
 }
 
-// .item {
-//   color: yellow;
-// }
+.item {
+  color: red;
+  img { 
+    width: 50px;
+    border-radius: 50%;
+    }
+ }
 
-.item img {
-  width: 50px;
-  border-radius: 50%;
-}
+
+ .discription {
+   padding: 10px;
+ }
+
+ .postsBlock{
+   padding: 10px;
+ }
+
+ .posts{
+   margin-top: 10px;
+ }

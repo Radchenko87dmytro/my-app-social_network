@@ -3,14 +3,17 @@ import "./Profile.scss"
 import Post from './Post';
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
     
     return (
-        <div>
-            My posts
-            <textarea></textarea>
-            <button>New Posts</button>
-
+        <div className='postsBlock'>
+            <h2>My posts</h2>    
+            <div>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button>New Posts</button>
+            </div>
             <div>
                 <div className='posts'>
                     <Post message="How, are you?" fill=" cool" likes=" 10"></Post>

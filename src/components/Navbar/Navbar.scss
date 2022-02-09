@@ -1,0 +1,17 @@
+
+.nav {
+  grid-area: n;
+  background-color: darkgray;
+  padding: 0px;
+  font-size: 30px;
+    li{
+      list-style-type: none;
+    }
+    li a{
+    color: white;
+    text-decoration: none;
+    &:active{
+      color: gold;
+    }
+  }
+}
