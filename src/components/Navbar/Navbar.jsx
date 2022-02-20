@@ -8,7 +8,7 @@ const Navbar = () => {
   return <nav className='nav'>
     <ul>
       <li className="item">
-        <NavLink to='/Profile/ProfileN.jsx'>Profil</NavLink>
+        <NavLink to='/Profile'>Profil</NavLink>
       </li>
       <li className="item">
         <NavLink to='/Dialogs'>Messages(Dialogs)</NavLink>

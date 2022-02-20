@@ -14,24 +14,28 @@ const MyPosts = (props) => {
         <Post message={p.message } likesCount={p.likesCount}></Post>
         )
     
-
-
         let newFormElement=React.createRef();
-
-        let add = ()=>{
-          props.addPost(text)
-           let text =newFormElement.current.value;
+         
+        let addPost = ()=>{
+           let text =newFormElement.current.value; 
+           props.addPost(text)
+           props.updateNewPostText("");
         }
 
+    let onPostChange = ()=>{
+        let text =newFormElement.current.value;
+        props.updateNewPostText(text)
+    }
 
     return (
         <div className='postsBlock'>
             <h2>My posts</h2>    
             <div>
-                <textarea ref={newFormElement}></textarea>
+                <textarea onChange={onPostChange} ref={newFormElement} 
+                            value={props.newPostText}/>
             </div>
             <div>
-                <button onClick={add}>Add Posts</button>
+                <button onClick={addPost} >Add Posts</button>
             </div>
             <div>
                 <div className='posts'>

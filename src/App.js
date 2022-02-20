@@ -29,8 +29,8 @@ const App = (props) => {
         <div>
           <Routes>
              
-             <Route path="/Profile/ProfileN.jsx" element ={<ProfileN posts={props.appState.posts} addPost={props.addPost}/>} />
-            <Route  path="/Dialogs/*"            element ={<Dialogs  dialogsData={props.appState.dialogsData}  messagesData={props.appState.messagesData}/>} /> 
+            <Route path="/Profile/*" element ={<ProfileN profilePage={props.state.profilePage}              addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
+            <Route path="/Dialogs/*" element ={<Dialogs  dialogsData={props.state.dialogsData}  messagesData={props.state.messagesData}/>} /> 
 
              
           {/*    <Route path="/Profile/ProfileN.jsx" render ={ props=> <ProfileN/>} />
