@@ -3,6 +3,13 @@ import "./Profile.scss"
 import Post from './Post';
 
 
+let addPostActionCreator = ()=>{
+    return{
+        type: "ADD-POST"
+    }
+}
+
+
 const MyPosts = (props) => {
 
     // let posts = [
@@ -17,14 +24,16 @@ const MyPosts = (props) => {
         let newFormElement=React.createRef();
          
         let addPost = ()=>{
-           let text =newFormElement.current.value; 
-           props.addPost(text)
-           props.updateNewPostText("");
+           //let text =newFormElement.current.value; 
+           
+           props.dispatch({type: "ADD-POST"}) //txt
+           //props.updateNewPostText("");
         }
 
     let onPostChange = ()=>{
         let text =newFormElement.current.value;
-        props.updateNewPostText(text)
+        let action = ({type: "UPDATE-NEW-POST-TEXT", newText: text})
+        props.dispatch(action)
     }
 
     return (

@@ -11,7 +11,7 @@ import Music from './components/MainContent/Music/Music';
 import Settings from './components/MainContent/Settings/Settings';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { addPost } from './redux/state';
-
+import store from './redux/state';
 
 const App = (props) => {
 
@@ -29,16 +29,16 @@ const App = (props) => {
         <div>
           <Routes>
              
-            <Route path="/Profile/*" element ={<ProfileN profilePage={props.state.profilePage}              addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} />
-            <Route path="/Dialogs/*" element ={<Dialogs  dialogsData={props.state.dialogsData}  messagesData={props.state.messagesData}/>} /> 
+            <Route path="/Profile/*" element ={<ProfileN profilePage={props.state.profilePage}      dispatch={props.dispatch} />} />
+            <Route path="/Dialogs/*" element ={<Dialogs store={props.store} />} /> 
 
              
           {/*    <Route path="/Profile/ProfileN.jsx" render ={ props=> <ProfileN/>} />
          <Route  path="/Dialogs/*"           render ={ ()=><Dialogs/>} /> */}
 
-            <Route path="/News/News.jsx" element ={<News/>} />
-            <Route path="/Music/Music.jsx" element ={<Music/>} />
-            <Route path="/Settings/Settings.jsx" element ={<Settings/>} />
+            <Route path="/News/*" element ={<News/>} />
+            <Route path="/Music/*" element ={<Music/>} />
+            <Route path="/Settings/*" element ={<Settings/>} />
             
           </Routes>
         </div>

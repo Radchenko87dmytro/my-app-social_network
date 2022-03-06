@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Dialogs.scss"
-
+import { sendMessageCreator } from '../../../redux/state';
+import { updateNewMessageBodyCreator } from '../../../redux/state';
 
 const DialogItem = (props) => {
     let path = "/Dialogs/" + props.id
@@ -21,82 +22,40 @@ const Message = (props) => {
 
 
 const Dialogs = (props) => {
-    // let dialogsData = [
-    //     { id: 1, name: "Dima" },
-    //     { id: 2, name: "Andreas" },
-    //     { id: 3, name: "Sonia" },
-    //     { id: 4, name: "Alexandra" },
-    //     { id: 5, name: "Viktoa" },
-    //     { id: 6, name: "Valery" },
-    // ]
 
-    // let messagesData = [
-    //     { id: 1, message: "Hi" },
-    //     { id: 2, message: "How are you?" },
-    //     { id: 3, message: "ok" },
-    //     { id: 4, message: "ok" },
-    //     { id: 5, message: "ok" },
-    //     { id: 5, message: "ok" },
-    // ]
+    let state = props.store.getState().dialogsPage
 
-    let dialogsElements = props.dialogsData.map((dialog) =>
-        <DialogItem name={dialog.name} id={dialog.id} />
-    )
+    let dialogsElements = state.dialogs.map((dialog) =>
+        <DialogItem name={dialog.name} id={dialog.id} />)
 
-    // nowy refaktoring
-    //  [
-    // // <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>,
-    // // <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>,
-    // // <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>
-    // ];
+    let messagesElements = state.messages.map(message =>
+        <Message message={message.message}></Message>)
 
-    let messagesElements = props.messagesData.map(message =>
-        <Message message={message.message}></Message>
-    )
+    let newMessageBody = state.newMessageBody
+
+    let onSendMessageClick = ()=>{
+        props.store.dispatch(sendMessageCreator())
+    }
+
+    let onNewMessageChange = (e)=>{
+        let body = e.target.value
+        props.store.dispatch(updateNewMessageBodyCreator(body))     
+    }
 
 
     return (
         <div className='dialogs'>
             <div className='dialogs_items'>
-
-                {
-                    dialogsElements
-                }
-
-
-
-                {/* <DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>
-                 <DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>
-                <DialogItem name={dialogsData[3].name} id={dialogsData[3].id}/>
-                <DialogItem name={dialogsData[4].name} id={dialogsData[4].id}/>
-                <DialogItem name={dialogsData[5].name} id={dialogsData[5].id}/> */}
-
-
-                {/* Czesc kodu refaktoring ktorego zrobiono wyzej
-
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/1">Dima</NavLink> 
-                </div>
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/2">Andreas</NavLink> 
-                </div>
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/3">Sonia</NavLink> 
-                </div>
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/4">Alexandra</NavLink> 
-                </div>
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/5">Viktor</NavLink> 
-                </div>
-                <div className='dialog'>
-                    <NavLink to="/Dialogs/6">Valery</NavLink> 
-                </div> */}
+                {dialogsElements}
             </div>
             <div className='messages'>
-
-                {messagesElements}
+                <div>{messagesElements}</div>
+                <div>
+                    <div><textarea value={newMessageBody}
+                                   onChange={onNewMessageChange}
+                                   placeholder='Enter your message'></textarea></div>
+                    <div><button onClick={onSendMessageClick}>Send</button></div>
+                </div>
 
 
                 {/* <Message message={messagesData[0].message}></Message> 
