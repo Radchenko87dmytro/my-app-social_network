@@ -10,12 +10,10 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
  export let rerenderEntireTree=(state)=> {
   ReactDOM.render(
-  <React.StrictMode>
+  
     <BrowserRouter>
     <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root'));
+    </BrowserRouter>, document.getElementById('root'));
 }
 
   rerenderEntireTree(store.getState());
