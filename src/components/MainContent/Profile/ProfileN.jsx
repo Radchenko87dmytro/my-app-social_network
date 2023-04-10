@@ -23,6 +23,10 @@ const ProfileN = (props) => {
       <MyPosts posts={props.profilePage.posts} 
                newPostText={props.profilePage.newPostText}
                dispatch={props.dispatch}/>
+
+
+
+       
     </div>
   )
 }

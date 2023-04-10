@@ -8,8 +8,8 @@ import store from "./redux/state"
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 //import {rerenderEntireTree} from "./render"
 
- export let rerenderEntireTree=(state)=> {
-  ReactDOM.render(
+let rerenderEntireTree=(state)=> {
+    ReactDOM.render(
   
     <BrowserRouter>
     <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
@@ -24,4 +24,4 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//reportWebVitals();

@@ -1,13 +1,14 @@
 import React from 'react';
 import "./Profile.scss"
 import Post from './Post';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer';
 
 
-let addPostActionCreator = ()=>{
-    return{
-        type: "ADD-POST"
-    }
-}
+// let addPostActionCreator = ()=>{
+//     return{
+//         type: "ADD-POST"
+//     }
+// }
 
 
 const MyPosts = (props) => {
