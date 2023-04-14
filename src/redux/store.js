@@ -5,8 +5,6 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-
-
 let store = {
   _state: {
 
@@ -40,8 +38,10 @@ let store = {
           
         newMessageBody: ""
 
-
         },
+        
+        sidebar: {}
+
 
 
     // dialogsData: [
@@ -54,10 +54,8 @@ let store = {
     //   { id: 6, name: "Valery" },
     // ],
 
-
-    
-  
   },
+
   _callSubscriber () {
     console.log("state changed")
   },  
