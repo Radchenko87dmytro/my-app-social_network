@@ -30,8 +30,8 @@ const App = (props) => {
         <div>
           <Routes>
              
-            <Route path="/Profile/*" element ={<ProfileN store={props.store}/>} />
-            <Route path="/Dialogs/*" element ={<DialogsContainer store={props.store} />} /> 
+            <Route path="/Profile/*" element ={<ProfileN/>} />
+            <Route path="/Dialogs/*" element ={<DialogsContainer/>} /> 
 
              
           {/*    <Route path="/Profile/ProfileN.jsx" render ={ props=> <ProfileN/>} />

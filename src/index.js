@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import store from "./redux/redux-store"
-//import store from "./redux/store"
-//import {addPost, updateNewPostText} from "./redux/state"
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-//import {rerenderEntireTree} from "./render"
+import StoreContext, { Provider } from './StoreContext';
+//import { Provider } from './StoreContext';
 
 let rerenderEntireTree=(state)=> {
   
     ReactDOM.render(
   
     <BrowserRouter>
-    <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+      <Provider store={store}>
+        <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
+      </Provider>  
+      
     </BrowserRouter>, document.getElementById('root'));
 }
 

@@ -5,14 +5,6 @@ import MyPostsContainer from './MyPostsContainer';
 
 const ProfileN = (props) => {
 
-  // let posts = [
-  //        {id: 1, message: "How, are you?", likesCount: 12},
-  //        {id: 2, message: "It's my first post", likesCount: 11},  
-  //    ]
-
-
-
-
   return (
     <div className='content'>
       <div>
@@ -21,7 +13,7 @@ const ProfileN = (props) => {
       <div className='discription'>
         ava+discription
       </div>
-      <MyPostsContainer store = {props.store}/>
+      <MyPostsContainer/>
 
 
 
