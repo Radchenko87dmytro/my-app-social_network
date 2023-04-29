@@ -1,41 +1,27 @@
 import React from 'react';
 import './App.scss';
-
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import ProfileN from './components/MainContent/Profile/ProfileN';
-
-
+import Profile from './components/MainContent/Profile/Profile';
 import News from './components/MainContent/News/News';
 import Music from './components/MainContent/Music/Music';
 import Settings from './components/MainContent/Settings/Settings';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import { addPost } from './redux/store';
+import {Route, Routes} from 'react-router-dom';
 import DialogsContainer from './components/MainContent/Dialogs/DialogsContainer';
-//import store from './redux/redux-store';
+import UsersContainer from './components/MainContent/Users/UsersContainer';
 
-const App = (props) => {
-  //debugger
-  // let posts = [
-  //           {id: 1, message: "How, are you?", likesCount: 12},
-  //           {id: 2, message: "It's my first post", likesCount: 11},  
-  //       ]
-
- 
+const App = () => {
+  
   return (
-    //<BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div>
           <Routes>
              
-            <Route path="/Profile/*" element ={<ProfileN/>} />
-            <Route path="/Dialogs/*" element ={<DialogsContainer/>} /> 
-
-             
-          {/*    <Route path="/Profile/ProfileN.jsx" render ={ props=> <ProfileN/>} />
-         <Route  path="/Dialogs/*"           render ={ ()=><Dialogs/>} /> */}
+            <Route path="/Profile/*" element ={<Profile/>} />
+            <Route path="/Dialogs/*" element ={<DialogsContainer/>} />
+            <Route path="/Users/*" element ={<UsersContainer/>} />  
 
             <Route path="/News/*" element ={<News/>} />
             <Route path="/Music/*" element ={<Music/>} />
@@ -44,7 +30,6 @@ const App = (props) => {
           </Routes>
         </div>
       </div>
-    //</BrowserRouter>
     )
 };
 

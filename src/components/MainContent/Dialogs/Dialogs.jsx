@@ -22,11 +22,11 @@ const Dialogs = (props) => {
     let state = props.dialogsPage // we are taiking local state for this component
         console.log(state)
 
-    let dialogsElements = state.dialogs.map((dialog, pos) =>
-        <DialogItem name={dialog.name} id={dialog.id} key={pos}/>)
+    let dialogsElements = state.dialogs.map((dialog, id) =>
+        <DialogItem name={dialog.name} id={dialog.id} key={dialog.id}/>)
 
-    let messagesElements = state.messages.map((message, pos) =>
-        <Message message={message.message} key={pos}></Message>)
+    let messagesElements = state.messages.map((message, id) =>
+        <Message message={message.message} key={message.id}></Message>)
 
     let newMessageBody = state.newMessageBody
 

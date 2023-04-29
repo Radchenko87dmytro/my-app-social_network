@@ -1,9 +1,8 @@
 import React from 'react';
 import "./Profile.scss"
-import MyPosts from "./MyPosts"
 import MyPostsContainer from './MyPostsContainer';
 
-const ProfileN = (props) => {
+const Profile = () => {
 
   return (
     <div className='content'>
@@ -14,10 +13,6 @@ const ProfileN = (props) => {
         ava+discription
       </div>
       <MyPostsContainer/>
-
-
-
-       
     </div>
   )
 }
@@ -25,4 +20,4 @@ const ProfileN = (props) => {
 
 
 
-export default ProfileN
+export default Profile

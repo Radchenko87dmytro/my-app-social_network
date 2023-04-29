@@ -14,6 +14,9 @@ const Navbar = () => {
         <NavLink to='/Dialogs'>Messages(Dialogs)</NavLink>
       </li>
       <li className="item">
+        <NavLink to='/Users'>Users</NavLink>
+      </li>
+      <li className="item">
         <NavLink to='/News/News.jsx'>News</NavLink>        
       </li>
       <li className="item">
