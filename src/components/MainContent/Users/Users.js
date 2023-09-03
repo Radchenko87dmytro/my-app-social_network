@@ -6,7 +6,7 @@ const Users = (props) => {
 
     let getUsers = () => {
         if (props.users.length === 0) {
-            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currrentPage}&count=${this.props.pageSize}`).then(response => {
                 props.setUsers(response.data.items)
                     console.log(response.data.items)
                 })
@@ -19,7 +19,7 @@ const Users = (props) => {
             <button onClick={getUsers}>Get Users</button>
             {
                 props.users.map(u => <div key ={u.id}> 
-                    <span>
+                     <span>
                         <div>
                             <img src={u.photos.small != null ? u.photos.small : "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"} className={styles.userPhoto}/>
                         </div>

@@ -5,4 +5,12 @@
 
 .users {
     background-color: #96c7f2;
+    
+}
+.users span{
+    padding-left: 15px;
+}
+
+.selectedPage {
+    font-weight: bold;
 }
